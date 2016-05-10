@@ -3,12 +3,12 @@ from distutils.core import setup
 setup(
     name = 'urlrap',
     packages = ['urlrap'], # this must be the same as the name above
-    version = '0.1',
+    version = '0.2',
     description = 'URL connivance functions.',
     author = 'Bob Colner',
     author_email = 'bcolner@gmail.com',
     url = 'https://github.com/bobcolner/urlrap', 
-    download_url = 'https://github.com/bobcolner/urlrap/tarball/0.1',
+    download_url = 'https://github.com/bobcolner/urlrap/tarball/0.2',
     keywords = ['url', 'utility'], # arbitrary keywords
     license = 'MIT',
     # See https://pypi.python.org/pypi?%3Aaction=list_classifiers
