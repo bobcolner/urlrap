@@ -4,26 +4,29 @@ import dateutil
 import datetime
 
 def get_domain(url_str):
+    "Extract domain from URL"
     return urltools.parse(url_str).domain
 
 def get_path(url_str):
+    "Extract path component from URL"
     return urltools.parse(url_str).path
 
-def parse(url):
+def _parse(url):
+    "Parse URL with urltools"
     return urltools.parse(url)
 
 def md5_hash(input_str):
+    "Compuate MD5 hash"
     return md5(input_str.encode()).hexdigest()
 
 def normalize(url, strip=True):
-    '''Optionally removing query string & RFC3986 normalize URL'''
+    "Optionally removing query string & RFC3986 normalize URL"
     p = urltools.parse(url)
     if strip:
         url = p.scheme + '://' + p.subdomain + p.domain + p.path
     return urltools.normalize(url)
 
-def clean_split(div_str, sep=', ', case=None):
-    # return list(filter(lambda a: a != '', div_str.split(sep)))
+def _clean_split(div_str, sep=', ', case=None):
     sl = []
     for div in div_str.split(sep):
         div = div.strip()
@@ -31,12 +34,14 @@ def clean_split(div_str, sep=', ', case=None):
             div = div.upper()
         elif case == 'lower':
             div = div.lower()
+        
         if div != '':
             sl.append(div)
     return sl
 
 def find_path_date(url_path):
-    url_path_parts = clean_split(url_path, sep='/', case='lower')
+    "Extract date from URL page if exists."
+    url_path_parts = _clean_split(url_path, sep='/', case='lower')
     match = []
     for part in url_path_parts:
         try:
@@ -55,12 +60,13 @@ def find_path_date(url_path):
         return None
 
 def url_path_features(url=None, url_path=None):
-    d = {}
+    "Extract features from URL"
+    result = {}
     if url_path:
         d['path'] = url_path 
     else:
         d['path'] = get_path(url)
-    d['path_parts'] = clean_split(d['path'], sep='/', case='lower')
+    d['path_parts'] = _clean_split(d['path'], sep='/', case='lower')
     url_date = find_path_date(d['path'])
     if url_date != None:
         d['url_date'] = url_date
