@@ -4,7 +4,7 @@ URL Utility Functinos
 
 - Parse into fun parts
 - Normalize
-- Extract Date!
+- Extract Date
 
 #### examples
 ```py
