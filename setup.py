@@ -1,12 +1,12 @@
 from setuptools import find_packages, setup
 
-VERSION = '0.5'
+VERSION = '0.6'
 
 setup(
     name = 'urlrap',
     packages = find_packages(),
     version = VERSION,
-    platforms=["any"],
+    platforms=['any'],
     description = 'URL connivance functions.',
     author = 'Bob Colner',
     author_email = 'bcolner@gmail.com',
@@ -22,7 +22,7 @@ setup(
         'Development Status :: 4 - Beta',
         # Indicate who your project is intended for
         'Intended Audience :: Developers',
-        'Topic :: Internet',
+        'Topic :: Internet :: WWW/HTTP',
         # Pick your license as you wish (should match 'license' above)
         'License :: OSI Approved :: MIT License',
         # Specify the Python versions you support here.
@@ -30,6 +30,6 @@ setup(
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
         ],
-    install_requires=[i.strip() for i in open("requirements.txt").readlines()],
+    install_requires = [ i.strip() for i in open("requirements.txt").readlines() ],
     test_suite = 'tests'
 )
