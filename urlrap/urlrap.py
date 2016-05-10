@@ -61,7 +61,7 @@ def find_path_date(url_path):
 
 def url_path_features(url=None, url_path=None):
     "Extract features from URL"
-    result = {}
+    d = {}
     if url_path:
         d['path'] = url_path 
     else:
