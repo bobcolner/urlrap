@@ -1,13 +1,13 @@
-import urltools
+import urltools as _urltools
 import datetime as _datetime
 from dateutil.parser import parse as _dateparse
 
 def normalize(url, strip=False):
     "RFC3986 normalize URL & Optionally removing url-query/fragment string"
     if strip:
-        p = urltools.parse(url)
+        p = _urltools.parse(url)
         url = p.scheme + '://' + p.subdomain + p.domain + p.path
-    return urltools.normalize(url)
+    return _urltools.normalize(url)
 
 def find_date(url):
     "Extract date from URL page if exists."
@@ -35,16 +35,20 @@ def find_date(url):
 
 def find_domain(url_str):
     "Extract domain from URL"
-    return urltools.parse(url_str).domain
+    return _urltools.parse(url_str).domain
 
 def find_path(url_str):
     "Extract path component from URL"
-    return urltools.parse(url_str).path
+    return _urltools.parse(url_str).path
 
 def find_query(url_str):
     "Extract query component from URL"
-    return urltools.parse(url_str).query
+    return _urltools.parse(url_str).query
 
 def find_fragment(url_str):
     "Extract fragment component from URL"
-    return urltools.parse(url_str).fragment
+    return _urltools.parse(url_str).fragment
+
+def parse(url_str):
+    "Parse URL into component parts"
+    return _urltools.parse(url_str)
