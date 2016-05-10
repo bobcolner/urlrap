@@ -1,23 +1,25 @@
-from distutils.core import setup
+from setuptools import find_packages, setup
+
+VERSION = '0.4'
 
 setup(
     name = 'urlrap',
-    packages = ['urlrap'], # this must be the same as the name above
-    version = '0.2',
+    packages = find_packages(),
+    version = VERSION,
+    platforms=["any"],
     description = 'URL connivance functions.',
     author = 'Bob Colner',
     author_email = 'bcolner@gmail.com',
     url = 'https://github.com/bobcolner/urlrap', 
-    download_url = 'https://github.com/bobcolner/urlrap/tarball/0.2',
+    download_url = 'https://github.com/bobcolner/urlrap/tarball/{0}'.format(VERSION),
     keywords = ['url', 'utility'], # arbitrary keywords
     license = 'MIT',
-    # See https://pypi.python.org/pypi?%3Aaction=list_classifiers
-    classifiers = [
+    classifiers = [ # See: https://pypi.python.org/pypi?%3Aaction=list_classifiers
         # How mature is this project? Common values are
         #   3 - Alpha
         #   4 - Beta
         #   5 - Production/Stable
-        'Development Status :: 3 - Alpha',
+        'Development Status :: 4 - Beta',
         # Indicate who your project is intended for
         'Intended Audience :: Developers',
         'Topic :: Internet',
@@ -28,5 +30,6 @@ setup(
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
         ],
-    install_requires = ['urltools', 'dateutil']
+    install_requires=[i.strip() for i in open("requirements.txt").readlines()],
+    test_suite = 'tests'
 )
