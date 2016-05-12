@@ -2,7 +2,7 @@
 URLRAP
 '''
 __title__ = 'urlrap'
-__version__ = '0.1'
+__version__ = '0.6'
 __author__ = 'Bob Colner'
 __license__ = 'MIT'
 __copyright__ = 'Copyright 2016 Bob Colner'
