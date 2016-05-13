@@ -1,6 +1,6 @@
 from setuptools import find_packages, setup
 
-VERSION = '0.6'
+VERSION = '0.7'
 
 setup(
     name = 'urlrap',
@@ -30,6 +30,6 @@ setup(
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
         ],
-    install_requires = [ i.strip() for i in open("requirements.txt").readlines() ],
+    install_requires = ['urltools >=0.32, <2.0', 'dateutil >=0.12, <2.0'],
     test_suite = 'tests'
 )

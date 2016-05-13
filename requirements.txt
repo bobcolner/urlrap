@@ -1,2 +1,0 @@
-urltools >=0.32, <2.0
-dateutil >=0.12, <2.0
