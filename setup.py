@@ -30,6 +30,6 @@ setup(
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
         ],
-    install_requires = ['urltools >=0.32, <2.0', 'dateutil >=0.12, <2.0'],
+    install_requires = ['urltools >=0.3.2, <2.0', 'dateutil >=0.12, <2.0'],
     test_suite = 'tests'
 )
